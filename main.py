@@ -5,10 +5,24 @@ from src.query_and_manipulation import get_latest_cr_ratio_row, get_market_healt
 from src.scoring import score_with_limits, score_bad_debt, score_debt_ceiling
 import json
 import numpy as np
+import os
+from PIL import Image
+
 markets = load_markets()
 
 # Set page to wide mode
 st.set_page_config(layout="wide")
+
+# Load LlamaRisk logo
+logo_path = "./LR_logo_light.png"
+if os.path.exists(logo_path):
+    logo = Image.open(logo_path)
+else:
+    logo = None
+
+st.image(logo, width=200)
+    
+    
 
 def main():
     st.title("Market Data & Score")
