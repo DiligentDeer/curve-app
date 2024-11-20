@@ -542,6 +542,10 @@ def main():
                 st.warning("Moderate Health")
             else:
                 st.error("Poor Health")
-            
+        
+        st.divider()
+        st.markdown("Detailed methodology can be found in this [notebook](https://hackmd.io/@diligentdeer/rkCvnWgMJe)")
+        st.caption("Powered by LlamaRisk")
+        
 if __name__ == "__main__":
     main()
