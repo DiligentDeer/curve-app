@@ -25,7 +25,7 @@ st.image(logo, width=200)
     
 
 def main():
-    st.title("Curve Mint Market Data & Score")
+    st.title("crvUSD Mint Market Data & Score")
     
     # Create dropdown with market names
     market_names = list(markets.keys())
