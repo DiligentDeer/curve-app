@@ -72,7 +72,7 @@ def score_debt_ceiling(recommended_debt_ceiling: float,
         return 1.0
     elif current_debt <= recommended_debt_ceiling:
         # score between 0.5 and 1
-        return 0.5 + 0.5 * (current_debt / recommended_debt_ceiling)
+        return 0.5 + 0.5 * ((recommended_debt_ceiling - current_debt) / recommended_debt_ceiling)
     else:
         return 0.0
 
