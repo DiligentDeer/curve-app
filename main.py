@@ -140,7 +140,7 @@ def main():
                 f"{absolute_cr_score:.2%}",
                 help="Score based on current collateral ratio"
             )
-            st.caption(f"Current LTV = {1/cr_comparison['cr_ratio']:.2%}. Scored between 75% of min LTV possible (min) and 75% of max LTV possible (max), lower is better.")
+            st.caption(f"Current LTV = {1/cr_comparison['cr_ratio']:.2%}. Scored between 75% of min LTV possible (min) (CR ~{1/(0.75*market_obj.min_ltv):.2f}, LTV ~{0.75*market_obj.min_ltv}) and 75% of max LTV possible (max) (CR ~{1/(0.75*market_obj.max_ltv):.2f}, LTV ~{0.75*market_obj.max_ltv}), lower is better.")
         with col3:
             st.metric(
                 "Final CR Score", 
