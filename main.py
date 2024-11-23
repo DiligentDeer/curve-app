@@ -97,9 +97,9 @@ def main():
             cr_comparison = get_latest_cr_ratio_row(market_obj)
             
             # print(json.dumps(cr_comparison, indent=4))
-            print(1/cr_comparison["cr_ratio"])
-            print(f"max_ltv: {0.75*market_obj.max_ltv}")
-            print(f"min_ltv: {0.75*market_obj.min_ltv}")
+            # print(1/cr_comparison["cr_ratio"])
+            # print(f"max_ltv: {0.75*market_obj.max_ltv}")
+            # print(f"min_ltv: {0.75*market_obj.min_ltv}")
             
             relative_cr_score = score_with_limits(cr_comparison["cr_7d/30d"],1.1,0.9,True)
             
@@ -119,15 +119,15 @@ def main():
             
             probabilities, beta = analyze_price_drops(market_obj,markets["WBTC"],[0.075, 0.15])
             
-            print(f"Beta: {beta}")
+            # print(f"Beta: {beta}")
             
             beta_score = score_with_limits(beta,2.5,0.5,False,1)
             
             prob_drop1 = probabilities[f"drop1"]['parametric_probability']
             prob_drop2 = probabilities[f"drop2"]['parametric_probability']
             
-            print(f"Prob Drop 1: {prob_drop1}")
-            print(f"Prob Drop 2: {prob_drop2}")
+            # print(f"Prob Drop 1: {prob_drop1}")
+            # print(f"Prob Drop 2: {prob_drop2}")
             
             prob_drop1_score = score_with_limits(prob_drop1,0.03,0,False)
             prob_drop2_score = score_with_limits(prob_drop2,0.0075,0,False)
@@ -138,9 +138,9 @@ def main():
             
             vol_45d, vol_180d, vol_ratio = calculate_volatility_ratio(market_obj)
             
-            print(f"Vol 45d: {vol_45d}")
-            print(f"Vol 180d: {vol_180d}")
-            print(f"Vol Ratio: {vol_ratio}")
+            # print(f"Vol 45d: {vol_45d}")
+            # print(f"Vol 180d: {vol_180d}")
+            # print(f"Vol Ratio: {vol_ratio}")
             
             vol_ratio_score = score_with_limits(vol_ratio,1.5,0.75,False)
             
@@ -151,16 +151,16 @@ def main():
             
             current_collateral_under_sl_ratio, relative_collateral_under_sl_ratio = get_under_sl_ratios(market_obj)
             
-            print(f"Current Collateral Under SL Ratio: {current_collateral_under_sl_ratio}")
-            print(f"Relative Collateral Under SL Ratio: {relative_collateral_under_sl_ratio}")
+            # print(f"Current Collateral Under SL Ratio: {current_collateral_under_sl_ratio}")
+            # print(f"Relative Collateral Under SL Ratio: {relative_collateral_under_sl_ratio}")
             
             collateral_under_sl_score = score_with_limits(current_collateral_under_sl_ratio, 2, 0, False)
             
-            print(f"Collateral Under SL Score: {collateral_under_sl_score}")
+            # print(f"Collateral Under SL Score: {collateral_under_sl_score}")
             
             relative_collateral_under_sl_score = score_with_limits(relative_collateral_under_sl_ratio, 2.5, 0.5, False,1)
             
-            print(f"Relative Collateral Under SL Score: {relative_collateral_under_sl_score}")
+            # print(f"Relative Collateral Under SL Score: {relative_collateral_under_sl_score}")
             
             aggregate_collateral_under_sl_score = (0.4*collateral_under_sl_score + 0.6*relative_collateral_under_sl_score)
             
