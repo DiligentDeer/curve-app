@@ -685,7 +685,7 @@ def main():
             vol_metrics = ["Volatility Performance", "SL Responsiveness", "Average Arb Profit", "% of Loans in SL", "Borrower Concentration"]
 
             st.markdown("""
-                <div style="background-color: rgba(128, 128, 128, 0.1); padding: 10px; border-radius: 5px; margin: 5px 0;">
+                <div style="background-color: rgba(128, 128, 128, 0.1); padding: 10px; border-radius: 5px; margin: 15px 0;">
                     <b>Tier 4 - Interdependency Metrics</b>
                 </div>
             """, unsafe_allow_html=True)
